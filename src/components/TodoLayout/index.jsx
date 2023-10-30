@@ -1,7 +1,9 @@
+import { useTodoStore } from "../../states/todos";
 import TodoItem from "../TodoItem";
 import styles from "./style.module.css";
 
-const TodoLayout = ({ todos, updateTodo }) => {
+const TodoLayout = ({ todos }) => {
+  const updateTodo = useTodoStore((context) => context.updateTodo);
   const changeTodoStatus = (e, todo) => {
     e.preventDefault();
     todo = {
@@ -12,18 +14,20 @@ const TodoLayout = ({ todos, updateTodo }) => {
 
     const formData = new FormData();
     formData.append("id", todo.id);
-    formData.append("done", todo.done === "1" ? "0" : "1");
+    formData.append("done", todo.done);
     formData.append("action", "updateTodoStatus");
-    fetch(`http://localhost:3001/todos/`, {
+    fetch(`http://localhost/todo/`, {
       method: "POST",
       body: formData,
-    }).then((res) => {
-      if (res.success) {
-        console.log("Todo status updated");
-      } else {
-        console.log("Todo status update failed");
-      }
-    });
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        if (res.success) {
+          console.log("Todo status updated");
+        } else {
+          console.log("Todo status update failed");
+        }
+      });
   };
 
   return (
