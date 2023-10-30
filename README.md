@@ -1,0 +1,26 @@
+# Todo Application
+
+This is a simple todo application with a PHP backend and a React frontend.
+
+## Prerequisites
+
+- Local Web Server
+- Local Database Server
+- [Node.js](https://nodejs.org/en/)
+
+## Installation
+
+You should start the backend first, because the frontend needs the backend to work properly.
+
+### Backend
+1. You need to install a local web server (e.g. [XAMPP](https://www.apachefriends.org/index.html)) and a local database server (e.g. [MySQL](https://www.mysql.com/)) on your computer.
+2. Copy the backend folder into the htdocs folder of your local web server.
+3. Configure the database connection in the file `backend/config/database/DatabaseConnector.php`.
+4. Import the database dump `database.sql` into your local database server.
+
+### Frontend
+1. Clone the repository.
+2. Open the terminal in the frontend folder.
+3. Run `npm install` to install all dependencies.
+4. Run `npm start` to start the development server.
+5. Open `http://localhost:3000` in your browser.

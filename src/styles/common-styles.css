@@ -1,0 +1,12 @@
+:root{
+  --blue:#0079FF;
+  --green: #36AE7C;
+  --red: #FF5959;
+  --yellow: #FCD900;
+}
+
+.container{
+  position: relative;
+  min-height: 92vh;
+  padding: 1rem;
+}

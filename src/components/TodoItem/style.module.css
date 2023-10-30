@@ -1,0 +1,49 @@
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  padding: 1rem;
+  background-color: #0079FF;
+  border-radius: 10px;
+}
+
+.title{
+  overflow: hidden;
+}
+
+.description {
+  margin: 1rem 0 2rem;
+}
+
+.date {
+  position: absolute;
+  font-size: 0.8rem;
+  color: #ccc;
+  bottom: 0.8rem;
+  right: 1rem;
+}
+
+.indicator{
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  font-size: 0.8rem;
+  color: #ccc;
+  width: 20px;
+  height: 20px;
+  border: 1px solid white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.undone{
+  background-color: var(--red)
+}
+
+.done{
+  background-color: var(--green);
+}

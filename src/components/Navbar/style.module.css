@@ -1,0 +1,15 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 8vh;
+  background-color: #0079FF;
+  position: relative;
+}
+
+.navlink {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 600;
+}

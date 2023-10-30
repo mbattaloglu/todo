@@ -1,0 +1,30 @@
+.container {
+  padding: 1rem;
+  height: 92vh;
+  z-index: 100;
+}
+
+.title-container {
+  display: flex;
+  margin-bottom: 1rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  color: #0079ff;
+}
+
+.button {
+  background-color: #0079ff;
+  border: none;
+  color: white;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1rem;
+  margin: 0.5rem;
+  cursor: pointer;
+  border-radius: 0.5rem;
+}
