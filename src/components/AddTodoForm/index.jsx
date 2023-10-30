@@ -15,12 +15,11 @@ const AddTodoForm = ({ closeForm }) => {
 
     const formData = new FormData();
     formData.append("owner_user_id", user.id);
-    formData.append("action", "addTodo");
     formData.append("title", title);
     formData.append("description", description);
     formData.append("done", done);
 
-    fetch("http://localhost/todo/", {
+    fetch("http://localhost/todo/addTodo/", {
       method: "POST",
       body: formData,
     })

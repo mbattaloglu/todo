@@ -19,9 +19,8 @@ const Login = () => {
     const data = new FormData();
     data.append("email", email);
     data.append("password", password);
-    data.append("action", "login");
 
-    await fetch("http://localhost/todo/", {
+    await fetch("http://localhost/todo/login/", {
       method: "POST",
       body: data,
     })
@@ -34,9 +33,8 @@ const Login = () => {
           setUser(data);
           const fetchData = async () => {
             const formData = new FormData();
-            formData.append("action", "getTodos");
             formData.append("owner_user_id", data.id);
-            await fetch("http://localhost/todo/", {
+            await fetch("http://localhost/todo/getTodos/", {
               method: "POST",
               body: formData,
             })

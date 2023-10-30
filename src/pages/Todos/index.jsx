@@ -7,7 +7,6 @@ import { useTodoStore } from "../../states/todos";
 
 const Todos = () => {
   const todos = useTodoStore((context) => context.todos);
-  const updateTodo = useTodoStore((context) => context.updateTodo);
   const [formOpen, setFormOpen] = useState(false);
   const user = useUserContext((context) => context.user);
 
@@ -31,7 +30,7 @@ const Todos = () => {
       </div>
       {!user && <p>Please login to see your todos.</p>}
       {user && todos.length === 0 && <p>No Todos</p>}
-      {user && todos.length > 0 && <TodoLayout todos={todos} updateTodo={updateTodo} />}
+      {user && todos.length > 0 && <TodoLayout todos={todos} />}
       {formOpen && <AddTodoForm closeForm={closeForm} />}
     </div>
   );
