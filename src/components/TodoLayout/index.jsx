@@ -16,6 +16,7 @@ const TodoLayout = ({ todos }) => {
     const formData = new FormData();
     formData.append("id", todo.id);
     formData.append("done", todo.done);
+    
     fetch(`http://localhost/todo/updateTodoStatus/`, {
       method: "POST",
       body: formData,

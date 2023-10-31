@@ -4,11 +4,11 @@
   flex-direction: column;
   color: #fff;
   padding: 1rem;
-  background-color: #0079FF;
+  background-color: #0079ff;
   border-radius: 10px;
 }
 
-.title{
+.title {
   overflow: hidden;
 }
 
@@ -24,7 +24,7 @@
   right: 1rem;
 }
 
-.indicator{
+.indicator {
   position: absolute;
   top: 0.6rem;
   right: 0.6rem;
@@ -40,10 +40,10 @@
   cursor: pointer;
 }
 
-.undone{
-  background-color: var(--red)
+.undone {
+  background-color: var(--red);
 }
 
-.done{
+.done {
   background-color: var(--green);
 }

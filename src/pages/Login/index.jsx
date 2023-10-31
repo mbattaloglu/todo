@@ -1,17 +1,19 @@
 import { useState } from "react";
-import "../../styles/common-styles.css";
-import stlyes from "./style.module.css";
-import { useUserContext } from "../../states/user";
 import { Link, useNavigate } from "react-router-dom";
 import { useTodoStore } from "../../states/todos";
+import { useUserContext } from "../../states/user";
+import "../../styles/common-styles.css";
+import styles from "./style.module.css";
 import InputBox from "../../components/InputBox";
-import WhiteButton from "../../components/WhiteButton";
+import WhiteButton from "../../components/_buttons/WhiteButton";
 import YellowErrorText from "../../components/YellowErrorText";
 
 const Login = () => {
   const setUser = useUserContext((context) => context.setUser);
   const setTodos = useTodoStore((context) => context.setTodos);
+
   const navigate = useNavigate();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [response, setResponse] = useState({});
@@ -54,8 +56,8 @@ const Login = () => {
   };
 
   return (
-    <div className={stlyes["form-container"]}>
-      <form className={stlyes.form} onSubmit={(e) => submitHandler(e)}>
+    <div className={styles["form-container"]}>
+      <form className={styles.form} onSubmit={(e) => submitHandler(e)}>
         <h1>Login</h1>
         <InputBox
           type="email"
@@ -72,7 +74,7 @@ const Login = () => {
           setValue={setPassword}
         />
         <WhiteButton title="Login" />
-        <Link to="/signin" className={stlyes.link}>
+        <Link to="/signin" className={styles.link}>
           Don't You Have an Account ?
         </Link>
         <YellowErrorText canShown={response.error} />

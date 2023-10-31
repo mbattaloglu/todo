@@ -1,7 +1,7 @@
 import { useUserContext } from "../../states/user";
-import TodoLayout from "../../components/TodoLayout";
-import styles from "./style.module.css";
 import { useTodoStore } from "../../states/todos";
+import styles from "./style.module.css";
+import TodoLayout from "../../components/TodoLayout";
 
 const Home = () => {
   const user = useUserContext((context) => context.user);

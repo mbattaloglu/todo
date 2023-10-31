@@ -2,7 +2,13 @@ import styles from "./style.module.css";
 import classNames from "classnames";
 import dateFormatter from "../../utils/dateFormatter";
 
-const TodoItem = ({ title, description, createdAt, done, changeTodoStatus }) => {
+const TodoItem = ({
+  title,
+  description,
+  createdAt,
+  done,
+  changeTodoStatus,
+}) => {
   const doneClasses = classNames(styles.indicator, styles.done);
   const undoneClasses = classNames(styles.indicator, styles.undone);
 
@@ -13,7 +19,6 @@ const TodoItem = ({ title, description, createdAt, done, changeTodoStatus }) => 
       return <h2 className={styles.title}>{title}</h2>;
     }
   };
-
 
   return (
     <div className={styles.card}>

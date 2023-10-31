@@ -1,5 +1,5 @@
 import styles from "./style.module.css";
-const YellowErrorText = ({canShown}) => {
+const YellowErrorText = ({ canShown }) => {
   return (
     <p
       className={styles["error-text"]}
