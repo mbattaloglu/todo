@@ -10,7 +10,6 @@
 
 .form-container {
   position: absolute;
-  bottom: 0;
   left: 0;
   padding: 1rem;
   z-index: 1000;
@@ -19,6 +18,17 @@
   background-color: #0079ff;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
+  animation: slide-in-from-bottom 0.2s ease forwards;
+}
+
+@keyframes slide-in-from-bottom {
+  0% {
+    bottom: -90rem;
+  }
+
+  100% {
+    bottom: 0;
+  }
 }
 
 .title-container {

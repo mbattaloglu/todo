@@ -1,4 +1,4 @@
-import { useTodoStore } from "../../states/todos";
+import { useTodoStore } from "../../stores/todos";
 import { useUserContext } from "../../states/user";
 import { Navigate } from "react-router-dom";
 

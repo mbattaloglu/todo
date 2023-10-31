@@ -1,4 +1,4 @@
-import { useTodoStore } from "../../states/todos";
+import { useTodoStore } from "../../stores/todos";
 import TodoItem from "../TodoItem";
 import styles from "./style.module.css";
 
@@ -7,17 +7,12 @@ const TodoLayout = ({ todos }) => {
 
   const changeTodoStatus = (e, todo) => {
     e.preventDefault();
-    todo = {
-      ...todo,
-      done: todo.done === "1" ? "0" : "1",
-    };
-    updateTodo(todo.id, todo);
 
     const formData = new FormData();
     formData.append("id", todo.id);
     formData.append("done", todo.done);
-    
-    fetch(`http://localhost/todo/updateTodoStatus/`, {
+
+    fetch(`${process.env.REACT_APP_API}/updateTodoStatus/`, {
       method: "POST",
       body: formData,
     })
@@ -25,6 +20,11 @@ const TodoLayout = ({ todos }) => {
       .then((res) => {
         if (res.success) {
           alert("Todo status updated");
+          todo = {
+            ...todo,
+            done: todo.done === "1" ? "0" : "1",
+          };
+          updateTodo(todo.id, todo);
         } else {
           alert("Todo status update failed");
         }
@@ -36,6 +36,7 @@ const TodoLayout = ({ todos }) => {
       {todos.map((todo) => (
         <TodoItem
           key={todo.id}
+          id={todo.id}
           title={todo.title}
           description={todo.description}
           createdAt={todo["created_at"]}

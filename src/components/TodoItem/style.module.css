@@ -48,3 +48,11 @@
 .done {
   background-color: var(--green);
 }
+
+.done:hover {
+  background-color: var(--dark-green);
+}
+
+.undone:hover {
+  background-color: var(--dark-red);
+}

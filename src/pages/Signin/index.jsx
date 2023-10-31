@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useUserContext } from "../../states/user";
-import { useTodoStore } from "../../states/todos";
+import { useTodoStore } from "../../stores/todos";
 import "../../styles/common-styles.css";
 import stlyes from "./style.module.css";
 import InputBox from "../../components/InputBox";
@@ -27,7 +27,7 @@ const Signin = () => {
     data.append("email", email);
     data.append("password", password);
 
-    await fetch("http://localhost/todo/signin/", {
+    await fetch(`${process.env.REACT_APP_API}/signin/`, {
       method: "POST",
       body: data,
     })
@@ -46,7 +46,7 @@ const Signin = () => {
           const fetchData = async () => {
             const formData = new FormData();
             formData.append("owner_user_id", data.id);
-            await fetch("http://localhost/todo/getTodos/", {
+            await fetch(`${process.env.REACT_APP_API}/getTodos/`, {
               method: "POST",
               body: formData,
             })

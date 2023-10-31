@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useUserContext } from "../../states/user";
-import { useTodoStore } from "../../states/todos";
+import { useTodoStore } from "../../stores/todos";
 import styles from "./style.module.css";
 import TodoLayout from "../../components/TodoLayout";
 import AddTodoForm from "../../components/AddTodoForm";

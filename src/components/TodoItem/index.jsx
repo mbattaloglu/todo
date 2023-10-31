@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import styles from "./style.module.css";
 import classNames from "classnames";
 import dateFormatter from "../../utils/dateFormatter";
 import TodoDetails from "../TodoDetails";
 
 const TodoItem = ({
+  id,
   title,
   description,
   createdAt,
@@ -12,6 +13,8 @@ const TodoItem = ({
   changeTodoStatus,
 }) => {
   const [details, setDetails] = useState(false);
+
+  const indicatorRef = useRef(null);
 
   const doneClasses = classNames(styles.indicator, styles.done);
   const undoneClasses = classNames(styles.indicator, styles.undone);
@@ -24,7 +27,13 @@ const TodoItem = ({
     }
   };
 
-  const openDetails = () => {
+  const openDetails = (e) => {
+    e.preventDefault();
+
+    if (e.target === indicatorRef.current) {
+      return;
+    }
+
     setDetails(true);
   };
 
@@ -34,22 +43,25 @@ const TodoItem = ({
 
   return (
     <>
-      <div className={styles.card} onClick={openDetails}>
+      <div className={styles.card} onClick={(e) => openDetails(e)}>
         {adjustTitle(title)}
         <p className={styles.description}>{description}</p>
         <p className={styles.date}>{dateFormatter(createdAt)}</p>
         <div
+          ref={indicatorRef}
           className={done === "0" ? undoneClasses : doneClasses}
           onClick={changeTodoStatus}
         ></div>
       </div>
       {details && (
         <TodoDetails
+          id={id}
           title={title}
           description={description}
           date={createdAt}
           done={done}
-          onClick={closeDetails}
+          closeHandler={closeDetails}
+          changeHandler={changeTodoStatus}
         />
       )}
     </>

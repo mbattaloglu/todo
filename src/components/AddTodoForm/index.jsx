@@ -1,15 +1,17 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import styles from "./style.module.css";
 import { useUserContext } from "../../states/user";
-import { useTodoStore } from "../../states/todos";
+import { useTodoStore } from "../../stores/todos";
 
 const AddTodoForm = ({ closeForm }) => {
   const user = useUserContext((context) => context.user);
   const addTodo = useTodoStore((context) => context.addTodo);
-  
+
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [done, setDone] = useState("0");
+
+  const formRef = useRef(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -20,7 +22,7 @@ const AddTodoForm = ({ closeForm }) => {
     formData.append("description", description);
     formData.append("done", done);
 
-    fetch("http://localhost/todo/addTodo/", {
+    fetch(`${process.env.REACT_APP_API}/addTodo/`, {
       method: "POST",
       body: formData,
     })
@@ -42,9 +44,16 @@ const AddTodoForm = ({ closeForm }) => {
       });
   };
 
+  const handleCloseClick = (e) => {
+    //check if we are clicking on the form or outside of it
+    if (formRef.current && !formRef.current.contains(e.target)) {
+      closeForm();
+    }
+  };
+
   return (
-    <div className={styles.container}>
-      <div className={styles["form-container"]}>
+    <div className={styles.container} onClick={handleCloseClick}>
+      <div className={styles["form-container"]} ref={formRef}>
         <div className={styles["title-container"]}>
           <h2 className={styles["todo-form-title"]}>Add New Todo</h2>
           <button className={styles["cancel-button"]} onClick={closeForm}>
