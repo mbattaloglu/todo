@@ -7,10 +7,8 @@
   background-color: #0079ff;
   border-radius: 10px;
   cursor: pointer;
-}
-
-.title {
-  overflow: hidden;
+  height: 160px;
+  width: 360px;
 }
 
 .description {

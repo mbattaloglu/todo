@@ -5,8 +5,10 @@ const formatDate = (date) => {
   const day = dateObj.getDate();
   const month = dateObj.getMonth() + 1;
   const year = dateObj.getFullYear();
-  const hours = dateObj.getHours();
-  const minutes = dateObj.getMinutes();
+  let hours = dateObj.getHours();
+  hours = dateObj.getHours() < 10 ? `0${dateObj.getHours()}` : dateObj.getHours();
+  let minutes = (dateObj.getMinutes() + "");
+  minutes = dateObj.getMinutes() < 10 ? `0${dateObj.getMinutes()}` : dateObj.getMinutes();
 
   return `${day}/${month}/${year} ${hours}:${minutes}`;
 };
