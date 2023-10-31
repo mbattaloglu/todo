@@ -17,7 +17,7 @@ const Home = () => {
           <h1 className={styles["welcome-title"]}>
             Welcome, {user.name} {user.surname}
           </h1>
-          <p className={styles.title}>Your Undone Todos</p>
+          <h4 className={styles.title}>Your Undone Todos</h4>
           <TodoLayout todos={undoneTodos} />
         </div>
       ) : (

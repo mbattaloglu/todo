@@ -1,9 +1,12 @@
 import classNames from "classnames";
 import styles from "./style.module.css";
+import dateFormatter from "../../utils/dateFormatter";
 
 const TodoDetails = ({ title, description, done, date, onClick }) => {
   const doneClasses = classNames(styles.indicator, styles.done);
   const undoneClasses = classNames(styles.indicator, styles.undone);
+
+  date = dateFormatter(date);
 
   return (
     <div className={styles.container}>
