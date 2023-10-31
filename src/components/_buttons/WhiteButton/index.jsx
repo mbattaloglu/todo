@@ -1,6 +1,6 @@
 import styles from "./style.module.css";
 
-const BlueButton = ({title}) => {
+const WhiteButton = ({title}) => {
   return (
     <button className={styles.button} type="submit">
       {title}
@@ -8,4 +8,4 @@ const BlueButton = ({title}) => {
   );
 };
 
-export default BlueButton;
+export default WhiteButton;

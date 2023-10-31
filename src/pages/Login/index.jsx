@@ -5,7 +5,7 @@ import { useUserContext } from "../../states/user";
 import { Link, useNavigate } from "react-router-dom";
 import { useTodoStore } from "../../states/todos";
 import InputBox from "../../components/InputBox";
-import BlueButton from "../../components/BlueButton";
+import WhiteButton from "../../components/WhiteButton";
 import YellowErrorText from "../../components/YellowErrorText";
 
 const Login = () => {
@@ -71,7 +71,7 @@ const Login = () => {
           value={password}
           setValue={setPassword}
         />
-        <BlueButton title="Login" />
+        <WhiteButton title="Login" />
         <Link to="/signin" className={stlyes.link}>
           Don't You Have an Account ?
         </Link>

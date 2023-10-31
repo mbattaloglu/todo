@@ -4,6 +4,7 @@ import TodoLayout from "../../components/TodoLayout";
 import styles from "./style.module.css";
 import AddTodoForm from "../../components/AddTodoForm";
 import { useTodoStore } from "../../states/todos";
+import BlueButton from "../../components/_buttons/BlueButton";
 
 const Todos = () => {
   const todos = useTodoStore((context) => context.todos);
@@ -23,9 +24,7 @@ const Todos = () => {
       <div className={styles["title-container"]}>
         <h1 className={styles.title}>Your Todos</h1>
         {user && (
-          <button className={styles.button} onClick={openForm}>
-            Add New Todo
-          </button>
+          <BlueButton title="Add Todo" onClick={openForm} />
         )}
       </div>
       {!user && <p>Please login to see your todos.</p>}
