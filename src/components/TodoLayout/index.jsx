@@ -23,9 +23,9 @@ const TodoLayout = ({ todos }) => {
       .then((res) => res.json())
       .then((res) => {
         if (res.success) {
-          console.log(res);
+          alert("Todo status updated");
         } else {
-          console.log("Todo status update failed");
+          alert("Todo status update failed");
         }
       });
   };

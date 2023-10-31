@@ -1,0 +1,31 @@
+.input {
+  border: none;
+  border-bottom: 2px solid white;
+  outline: none;
+  padding: 5px;
+  width: 250px;
+  color: white;
+  background-color: transparent;
+  font-size: 16px;
+}
+
+.input::placeholder {
+  color: white;
+  font-size: 16px;
+}
+
+.input:focus {
+  border-bottom: 2px solid #fcd900;
+}
+
+.input:focus::placeholder {
+  color: #fcd900;
+}
+
+.input:-webkit-autofill,
+.input:-webkit-autofill:hover,
+.input:-webkit-autofill:focus {
+  -webkit-text-fill-color: white;
+  box-shadow: transparent;
+  transition: background-color 5000s ease-in-out 0s;
+}

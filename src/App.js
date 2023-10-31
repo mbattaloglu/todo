@@ -2,7 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Todos from "./pages/Todos";
-import Signin from "./pages/Signup";
+import Signin from "./pages/Signin";
 import Login from "./pages/Login";
 import Logout from "./pages/Logout";
 
