@@ -2,6 +2,7 @@ import { useUserContext } from "../../states/user";
 import { useTodoStore } from "../../states/todos";
 import styles from "./style.module.css";
 import TodoLayout from "../../components/TodoLayout";
+import TodoDetails from "../../components/TodoDetails";
 
 const Home = () => {
   const user = useUserContext((context) => context.user);
