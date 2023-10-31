@@ -41,7 +41,7 @@
   cursor: pointer;
 }
 
-.delete-button{
+.delete-button {
   position: absolute;
   bottom: 0.6rem;
   left: 5rem;

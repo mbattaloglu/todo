@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import {useTodoStore} from "../../stores/todos";
+import { useTodoStore } from "../../stores/todos";
 import classNames from "classnames";
 import styles from "./style.module.css";
 import dateFormatter from "../../utils/dateFormatter";
@@ -19,7 +19,6 @@ const TodoDetails = ({
 
   const doneClasses = classNames(styles.indicator, styles.done);
   const undoneClasses = classNames(styles.indicator, styles.undone);
-
 
   date = dateFormatter(date);
 
@@ -41,8 +40,7 @@ const TodoDetails = ({
         if (data.success) {
           removeTodo(id);
           closeHandler();
-        }
-        else{
+        } else {
           alert("Something went wrong!");
         }
       });
