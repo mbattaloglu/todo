@@ -10,7 +10,7 @@ const TodoLayout = ({ todos }) => {
 
     const formData = new FormData();
     formData.append("id", todo.id);
-    formData.append("done", todo.done);
+    formData.append("done", todo.done === "1" ? "0" : "1");
 
     fetch(`${process.env.REACT_APP_API}/updateTodoStatus/`, {
       method: "POST",

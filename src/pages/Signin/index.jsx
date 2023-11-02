@@ -94,7 +94,7 @@ const Signin = () => {
           setValue={setPassword}
         />
         <WhiteButton title="Signin" />
-        <Link to="/signup" className={stlyes.link}>
+        <Link to="/login" className={stlyes.link}>
           Already Have an Account ?
         </Link>
         <YellowErrorText canShown={response.error} />

@@ -2,7 +2,8 @@ const formatDate = (date) => {
   //date: 2023-10-27 14:35:00 as a string
 
   const dateObj = new Date(date);
-  const day = dateObj.getDate();
+  let day = dateObj.getDate();
+  day = dateObj.getDate() < 10 ? `0${dateObj.getDate()}` : dateObj.getDate();
   const month = dateObj.getMonth() + 1;
   const year = dateObj.getFullYear();
   let hours = dateObj.getHours();
