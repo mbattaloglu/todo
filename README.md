@@ -27,4 +27,4 @@ You should start the backend first, because the frontend needs the backend to wo
 4. Run `npm start` to start the development server.
 5. Open `http://localhost:3000` in your browser.
 
-***PS:*** *This project is mainly focused on the frontend. The backend is just a simple API(No any security concern, or any database related topics etc).*
+**_PS:_** _This project is mainly focused on the frontend. The backend is just a simple API(No any security concern, or any database related topics etc)._
